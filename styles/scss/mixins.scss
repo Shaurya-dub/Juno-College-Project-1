@@ -1,0 +1,51 @@
+@mixin headingFont($size, $weight: 400) {
+  color: $yellow;
+  font-size: $size;
+  font-weight: $weight;
+  font-family: "Dokdo", cursive;
+  margin-bottom: 0;
+}
+
+// @mixin menuStyle {
+
+// }
+
+@mixin wrapperStyle($width, $maxWidth) {
+  width: $width;
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
+
+@mixin navStyle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    list-style: none;
+    flex-wrap: wrap;
+
+    li a {
+      padding: 20px;
+      font-family: $lato;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    :hover {
+      color: $yellow;
+    }
+  }
+}
+
+@mixin buttonStyle {
+  background-color: $green;
+  color: $white;
+  text-decoration: none;
+  font-family: $dokdo;
+  padding: 10px 5px;
+  font-size: 1.15rem;
+}

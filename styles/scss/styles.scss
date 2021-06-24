@@ -1,0 +1,263 @@
+@import "setup";
+@import "variables";
+@import "mixins";
+
+// general styling
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $lato;
+  color: $white;
+}
+img {
+  width: 100%;
+  display: block;
+}
+// header styling
+header {
+  height: 100vh;
+  background-image: url(/mindnsoul-assets/home-image-1.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  //   position: relative;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// nav {
+//   display: flex;
+//   justify-content: space-between;
+//   //   background-color: indianred;
+
+//   ul {
+//     display: flex;
+//     flex-grow: 1;
+//     justify-content: flex-end;
+//     list-style: none;
+
+//     li a {
+//       padding: 20px;
+//       font-family: $lato;
+//       color: $white;
+//       text-decoration: none;
+//       text-transform: uppercase;
+//     }
+//   }
+// }
+
+nav {
+  @include navStyle;
+}
+
+h1 {
+  @include headingFont(2rem);
+  margin: 0;
+}
+
+h3 {
+  @include headingFont(2rem);
+}
+
+.wrapperOne {
+  @include wrapperStyle(85%, 1200px);
+}
+
+.headingHolder {
+  display: flex;
+  //   justify-content: center;
+  // align-items: flex-start;
+  // background-color: lawngreen;
+  //   width: 60%;
+  // margin-top: 100px;
+  // flex-wrap: wrap;
+  // padding-bottom: 10%;
+  // flex-direction: column;
+}
+
+.headImg {
+  // position: relative;
+  // top: 180px;
+  // left: 0;
+  width: 50%;
+  // transform: translateY(90%);
+  max-width: 650px;
+  align-self: flex-end;
+  // background-color: aquamarine;
+}
+
+.headImg img {
+  // position: relative;
+  // bottom: -100px;
+  // left: 0;
+  transform: translateY(100px);
+}
+
+.heading {
+  margin-left: 30px;
+  width: 40%;
+  // align-self: center;
+  // background-color: khaki;
+  margin-top: 100px;
+}
+.heading p {
+  color: $white;
+  font-family: $lato;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.heading h2 {
+  color: $yellow;
+  font-family: $dokdo;
+  font-size: 4rem;
+  margin: 0 auto;
+}
+
+// First Section Styling
+
+main a {
+  @include buttonStyle;
+}
+
+.firstSection {
+  background-color: $brown;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.firstSectionHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // margin: 80px auto 50px auto;
+  // margin-top: 40px;
+}
+
+.firstSectionText {
+  width: 60%;
+  // background-color: aquamarine;
+}
+
+.firstSectionImg {
+  width: 25%;
+  box-shadow: -15px 15px $green;
+}
+
+// Second Section Styling
+
+.secondSection {
+  background-color: $grey;
+  padding: 60px 0;
+}
+
+.secondSectionImg ul {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.secondSectionImg ul li {
+  list-style: none;
+  width: calc((100% / 3) - 20px);
+}
+
+// Third Section Styling
+
+.thirdSection {
+  background-color: $brown;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  // background-color: lightcoral;
+}
+
+.thirdSection ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  justify-content: space-between;
+}
+
+.thirdSection ul li {
+  // display: block;
+  list-style: none;
+  width: calc((100% / 2) - 50px);
+  // width: 40%;
+  // background-color: lightgreen;
+  margin-bottom: 10px;
+}
+
+.logo h3 {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.logo i {
+  background-color: $green;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+// Fourth Section Styling
+.fourthSection {
+  background-color: $grey;
+}
+
+.wrapperTwo {
+  // display: flex;
+  @include wrapperStyle(82%, 1100px);
+}
+
+.fourthSectionHold {
+  display: flex;
+  justify-content: space-between;
+  // background-color: lightgreen;
+  align-items: center;
+  height: auto;
+  // padding: 40px 0;
+}
+
+.fourthSectionHold:first-child {
+  margin-bottom: 120px;
+  // background-color: red;
+}
+
+.fourthSectionText {
+  margin-bottom: 30px;
+  width: 40%;
+  // text-align: end;
+}
+
+.fourthSectionText p {
+  width: 100%;
+}
+
+.fourthSectionImg {
+  width: 55%;
+  position: relative;
+  max-width: 600px;
+  // border: 2px solid red;
+  // overflow-x: hidden;
+}
+.fourthSectionImg:first-child img {
+  position: absolute;
+  box-shadow: 15px 15px $yellow;
+  right: 30%;
+  top: -190px;
+}
+
+.fourthSectionImg:nth-of-type(2) img {
+  box-shadow: -15px 15px $yellow;
+  position: absolute;
+  left: 30%;
+  bottom: -150px;
+}
