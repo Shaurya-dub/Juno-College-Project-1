@@ -256,8 +256,33 @@ main a {
 }
 
 .fourthSectionImg:nth-of-type(2) img {
-  box-shadow: -15px 15px $yellow;
   position: absolute;
+  box-shadow: -15px 15px $yellow;
   left: 30%;
   bottom: -150px;
+}
+
+// Last Section
+.lastSection {
+  background-color: $brown;
+}
+.bannerImage {
+  width: 100%;
+}
+.lastSectionText {
+  margin-top: 0px;
+  padding: 80px;
+  text-align: center;
+}
+
+.lastSection p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: black;
+  color: gray;
+  text-align: center;
+  padding: 5px;
 }
