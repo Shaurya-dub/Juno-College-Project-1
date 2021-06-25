@@ -276,6 +276,8 @@ html {
 body {
   font-family: "Lato", sans-serif;
   color: #fafffe;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -391,7 +393,7 @@ h3 {
   margin-bottom: 0;
 }
 
-.heading h2 {
+h2 {
   color: #ffc600;
   font-family: "Dokdo", cursive;
   font-size: 4rem;
@@ -547,7 +549,7 @@ main a {
   position: absolute;
   -webkit-box-shadow: 15px 15px #ffc600;
           box-shadow: 15px 15px #ffc600;
-  right: 30%;
+  right: 20%;
   top: -190px;
 }
 
@@ -555,7 +557,7 @@ main a {
   position: absolute;
   -webkit-box-shadow: -15px 15px #ffc600;
           box-shadow: -15px 15px #ffc600;
-  left: 30%;
+  right: -20%;
   bottom: -150px;
 }
 
@@ -583,4 +585,64 @@ footer {
   color: gray;
   text-align: center;
   padding: 5px;
+}
+
+.blogHeader {
+  height: 50vh;
+  background-image: url(/mindnsoul-assets/blog-image-1.jpg);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.blogMain {
+  background-color: #1e140e;
+}
+
+.blogHeader h2 {
+  margin-top: 60px;
+}
+
+.blogEntry {
+  width: 60%;
+}
+
+@media (max-width: 750px) {
+  h3 {
+    line-height: 0.6;
+    font-size: 1.8rem;
+  }
+
+  .headingHolder {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .headImg {
+    -ms-flex-item-align: initial;
+        align-self: initial;
+  }
+
+  .heading {
+    width: auto;
+  }
+
+  .headImg img {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+
+  .thirdSection ul {
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+  }
+
+  .fourthSectionImg img {
+    position: initial;
+  }
 }

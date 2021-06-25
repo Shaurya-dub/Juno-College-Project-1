@@ -10,11 +10,14 @@ html {
 body {
   font-family: $lato;
   color: $white;
+  margin: 0;
+  padding: 0;
 }
 img {
   width: 100%;
   display: block;
 }
+// HOME PAGE
 // header styling
 header {
   height: 100vh;
@@ -110,7 +113,7 @@ h3 {
   margin-bottom: 0;
 }
 
-.heading h2 {
+h2 {
   color: $yellow;
   font-family: $dokdo;
   font-size: 4rem;
@@ -251,15 +254,16 @@ main a {
 .fourthSectionImg:first-child img {
   position: absolute;
   box-shadow: 15px 15px $yellow;
-  right: 30%;
+  right: 20%;
   top: -190px;
 }
 
 .fourthSectionImg:nth-of-type(2) img {
   position: absolute;
   box-shadow: -15px 15px $yellow;
-  left: 30%;
+  right: -20%;
   bottom: -150px;
+  // border: 1px solid red;
 }
 
 // Last Section
@@ -285,4 +289,70 @@ footer {
   color: gray;
   text-align: center;
   padding: 5px;
+}
+
+// BLOG PAGE
+
+// blog header styling
+
+.blogHeader {
+  height: 50vh;
+  background-image: url(/mindnsoul-assets/blog-image-1.jpg);
+  justify-content: flex-start;
+}
+
+.blogMain {
+  background-color: $brown;
+}
+
+.blogHeader nav {
+  // align-self: flex-start;
+}
+
+.blogHeader h2 {
+  margin-top: 60px;
+}
+
+// blog main styling
+
+.blogEntry {
+  width: 60%;
+}
+
+// RESPONSIVE STYLES
+
+@media (max-width: 750px) {
+  h3 {
+    line-height: 0.6;
+    font-size: 1.8rem;
+  }
+  // HOME PAGE RESPONSIVE
+
+  // Home page header
+  .headingHolder {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .headImg {
+    align-self: initial;
+  }
+
+  .heading {
+    width: auto;
+  }
+  .headImg img {
+    transform: translateY(0px);
+  }
+
+  // Home page third section
+  .thirdSection ul {
+    align-self: baseline;
+  }
+
+  // Home page fourth section
+
+  .fourthSectionImg img {
+    position: initial;
+  }
 }
