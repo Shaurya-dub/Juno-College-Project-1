@@ -65,6 +65,15 @@ h3 {
   @include headingFont(2rem);
 }
 
+h4 {
+  margin: 0px;
+}
+
+h5 {
+  font-family: $dokdo;
+  font-size: 1.1rem;
+}
+
 .wrapperOne {
   @include wrapperStyle(85%, 1200px);
 }
@@ -248,6 +257,7 @@ main a {
   width: 55%;
   position: relative;
   max-width: 600px;
+  min-width: 250px;
   // border: 2px solid red;
   // overflow-x: hidden;
 }
@@ -279,6 +289,10 @@ main a {
   text-align: center;
 }
 
+.lastSection h3 {
+  margin-top: 0;
+}
+
 .lastSection p {
   text-align: left;
   margin-bottom: 20px;
@@ -295,14 +309,39 @@ footer {
 
 // blog header styling
 
+aside {
+  width: 20%;
+}
+
+article {
+  width: 57.4%;
+}
+
+.blogWrapper {
+  border: 2px solid violet;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: 40px;
+  width: 90%;
+}
+
+.blogImg {
+  width: 100%;
+}
+
+.blogText p {
+  // margin: auto;
+}
+
 .blogHeader {
   height: 50vh;
   background-image: url(/mindnsoul-assets/blog-image-1.jpg);
-  justify-content: flex-start;
+  // justify-content: flex-start;
 }
 
 .blogMain {
   background-color: $brown;
+  // display: flex;
 }
 
 .blogHeader nav {
@@ -316,7 +355,72 @@ footer {
 // blog main styling
 
 .blogEntry {
-  width: 60%;
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // background-color: violet;
+  // flex-wrap: wrap;
+}
+
+.blogFlex {
+  display: flex;
+  flex-direction: space-between;
+  // background-color: yellowgreen;
+}
+
+.blogPost {
+  // display: flex;
+  // flex-direction: column;
+  // align-self: center;
+  width: 75%;
+  // background-color: yellowgreen;
+  // margin: auto;
+}
+.blogImg {
+  width: 100%;
+}
+
+.blogText {
+  width: 100%;
+  // background-color: whitesmoke;
+}
+
+aside {
+  width: 30%;
+  background-color: $green;
+  padding: 10px;
+  height: auto;
+  align-self: flex-start;
+}
+
+.asideText ul {
+  padding-left: 15px;
+}
+
+// Comments styling
+
+.comment {
+  display: flex;
+  // align-items: baseline;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: coral;
+}
+
+.commentImg {
+  width: 15%;
+  // align-self: flex-start;
+}
+
+.commentText {
+  width: 80%;
+  // flex-grow: 1;
+  // margin-top:0px;
+}
+
+article h3 {
+  margin-bottom: 20px;
+  color: $white;
 }
 
 // RESPONSIVE STYLES
@@ -326,9 +430,16 @@ footer {
     line-height: 0.6;
     font-size: 1.8rem;
   }
+
+  main a {
+    display: inline-block;
+  }
   // HOME PAGE RESPONSIVE
 
   // Home page header
+  header {
+    background-position: right;
+  }
   .headingHolder {
     flex-direction: column-reverse;
     align-items: center;
@@ -340,6 +451,7 @@ footer {
 
   .heading {
     width: auto;
+    margin-left: 0px;
   }
   .headImg img {
     transform: translateY(0px);
@@ -354,5 +466,131 @@ footer {
 
   .fourthSectionImg img {
     position: initial;
+  }
+}
+
+@media (max-width: 682px) {
+  h3 {
+    line-height: 0.8;
+  }
+  // HOME PAGE STYLING
+
+  // Home page header
+  // .headingHolder {
+  //   margin-bottom: auto;
+  //   align-self: flex-start;
+  // }
+  header {
+    background-position: right;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto auto;
+  }
+
+  // Home page main
+  .firstSectionHolder {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .firstSectionImg {
+    box-shadow: none;
+    border-bottom: 5px solid $green;
+    width: 40%;
+  }
+
+  .wrapperTwo {
+    padding: 40px 0px;
+    width: 100%;
+  }
+
+  .fourthSectionHold {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 20px 0px;
+    // margin-bottom: auto;
+  }
+
+  .fourthSectionText {
+    width: 50%;
+  }
+
+  .thirdSection ul li {
+    width: 100%;
+  }
+
+  .firstSectionHolder p {
+    text-align: left;
+  }
+  .fourthSectionText p {
+    margin-bottom: 30px;
+  }
+
+  .fourthSectionHold:first-child {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .fourthSectionImg:first-child img {
+    position: static;
+    box-shadow: none;
+    border-bottom: 5px solid $yellow;
+  }
+
+  .fourthSectionImg:nth-of-type(2) img {
+    position: static;
+    box-shadow: none;
+    border-bottom: 5px solid $yellow;
+  }
+
+  // Third section styling
+  .thirdSection ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  nav ul li {
+    margin: 5px;
+  }
+
+  nav ul li a {
+    padding: 5px 10px;
+  }
+
+  .firstSectionText,
+  .fourthSectionText,
+  .lastSectionText {
+    width: 100%;
+    // padding-left: 40px;
+    text-align: center;
+  }
+
+  .lastSectionText {
+    padding: 20px 0px 20px 0px;
+  }
+
+  .wrapperOne,
+  .wrapperTwo {
+    width: 90%;
+  }
+
+  nav ul,
+  .thirdSection ul {
+    padding-left: 0px;
+  }
+
+  .logo {
+    text-align: center;
   }
 }

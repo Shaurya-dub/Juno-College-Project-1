@@ -356,6 +356,15 @@ h3 {
   margin-bottom: 0;
 }
 
+h4 {
+  margin: 0px;
+}
+
+h5 {
+  font-family: "Dokdo", cursive;
+  font-size: 1.1rem;
+}
+
 .wrapperOne {
   width: 85%;
   max-width: 1200px;
@@ -543,6 +552,7 @@ main a {
   width: 55%;
   position: relative;
   max-width: 600px;
+  min-width: 250px;
 }
 
 .fourthSectionImg:first-child img {
@@ -575,6 +585,10 @@ main a {
   text-align: center;
 }
 
+.lastSection h3 {
+  margin-top: 0;
+}
+
 .lastSection p {
   text-align: left;
   margin-bottom: 20px;
@@ -587,12 +601,29 @@ footer {
   padding: 5px;
 }
 
+aside {
+  width: 20%;
+}
+
+article {
+  width: 57.4%;
+}
+
+.blogWrapper {
+  border: 2px solid violet;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: 40px;
+  width: 90%;
+}
+
+.blogImg {
+  width: 100%;
+}
+
 .blogHeader {
   height: 50vh;
   background-image: url(/mindnsoul-assets/blog-image-1.jpg);
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
 }
 
 .blogMain {
@@ -604,13 +635,82 @@ footer {
 }
 
 .blogEntry {
-  width: 60%;
+  width: 100%;
+}
+
+.blogFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: space-between;
+          flex-direction: space-between;
+}
+
+.blogPost {
+  width: 75%;
+}
+
+.blogImg {
+  width: 100%;
+}
+
+.blogText {
+  width: 100%;
+}
+
+aside {
+  width: 30%;
+  background-color: #555f02;
+  padding: 10px;
+  height: auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.asideText ul {
+  padding-left: 15px;
+}
+
+.comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: coral;
+}
+
+.commentImg {
+  width: 15%;
+}
+
+.commentText {
+  width: 80%;
+}
+
+article h3 {
+  margin-bottom: 20px;
+  color: #fafffe;
 }
 
 @media (max-width: 750px) {
   h3 {
     line-height: 0.6;
     font-size: 1.8rem;
+  }
+
+  main a {
+    display: inline-block;
+  }
+
+  header {
+    background-position: right;
   }
 
   .headingHolder {
@@ -630,6 +730,7 @@ footer {
 
   .heading {
     width: auto;
+    margin-left: 0px;
   }
 
   .headImg img {
@@ -644,5 +745,150 @@ footer {
 
   .fourthSectionImg img {
     position: initial;
+  }
+}
+@media (max-width: 682px) {
+  h3 {
+    line-height: 0.8;
+  }
+
+  header {
+    background-position: right;
+  }
+
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: auto auto;
+  }
+
+  .firstSectionHolder {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+
+  .firstSectionImg {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-bottom: 5px solid #555f02;
+    width: 40%;
+  }
+
+  .wrapperTwo {
+    padding: 40px 0px;
+    width: 100%;
+  }
+
+  .fourthSectionHold {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    text-align: center;
+    padding: 20px 0px;
+  }
+
+  .fourthSectionText {
+    width: 50%;
+  }
+
+  .thirdSection ul li {
+    width: 100%;
+  }
+
+  .firstSectionHolder p {
+    text-align: left;
+  }
+
+  .fourthSectionText p {
+    margin-bottom: 30px;
+  }
+
+  .fourthSectionHold:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .fourthSectionImg:first-child img {
+    position: static;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-bottom: 5px solid #ffc600;
+  }
+
+  .fourthSectionImg:nth-of-type(2) img {
+    position: static;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-bottom: 5px solid #ffc600;
+  }
+
+  .thirdSection ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (max-width: 500px) {
+  nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  nav ul li {
+    margin: 5px;
+  }
+
+  nav ul li a {
+    padding: 5px 10px;
+  }
+
+  .firstSectionText,
+.fourthSectionText,
+.lastSectionText {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lastSectionText {
+    padding: 20px 0px 20px 0px;
+  }
+
+  .wrapperOne,
+.wrapperTwo {
+    width: 90%;
+  }
+
+  nav ul,
+.thirdSection ul {
+    padding-left: 0px;
+  }
+
+  .logo {
+    text-align: center;
   }
 }
