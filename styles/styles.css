@@ -626,15 +626,14 @@ article {
 .blogImg {
   width: 100%;
   position: relative;
-  top: 0px;
-  -webkit-box-shadow: 1px 8px 0px 1px #555f02;
-          box-shadow: 1px 8px 0px 1px #555f02;
-  border-right: 15px solid #555f02;
+  top: -30px;
+  -webkit-box-shadow: 20px 15px 0px -5px #555f02;
+          box-shadow: 20px 15px 0px -5px #555f02;
+  left: -12px;
 }
 
 .blogImg img {
   position: relative;
-  top: -30px;
 }
 
 .blogText p {
