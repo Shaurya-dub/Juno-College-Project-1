@@ -17,6 +17,17 @@ img {
   width: 100%;
   display: block;
 }
+
+.selected {
+  color: $yellow;
+}
+// ::placeholder,
+// :-ms-input-placeholder,
+// ::-ms-input-placeholder {
+//   color: $white;
+//   opacity: 1;
+// }
+
 // HOME PAGE
 // header styling
 header {
@@ -67,11 +78,14 @@ h3 {
 
 h4 {
   margin: 0px;
+  color: $yellow;
 }
 
 h5 {
   font-family: $dokdo;
   font-size: 1.1rem;
+  margin-bottom: 0px;
+  margin-top: 0;
 }
 
 .wrapperOne {
@@ -309,34 +323,50 @@ footer {
 
 // blog header styling
 
-aside {
-  width: 20%;
-}
-
 article {
-  width: 57.4%;
+  width: 60%;
+  // background-color: lime;
+  min-width: 350px;
+  max-width: calc(680px + 10%);
 }
 
 .blogWrapper {
-  border: 2px solid violet;
+  // border: 2px solid violet;
   max-width: 700px;
   margin-right: auto;
-  margin-left: 40px;
+  margin-left: 10%;
   width: 90%;
+  padding: 10px;
 }
 
 .blogImg {
   width: 100%;
+  position: relative;
+  top: 0px;
+  box-shadow: 1px 8px 0px 1px $green;
+  // left: -12px;
+  // max-width: 585px;
+  // margin-left: 2.3%;
+  border-right: 15px solid $green;
+  // border-bottom: 15px solid $green;
+}
+
+.blogImg img {
+  position: relative;
+  top: -30px;
 }
 
 .blogText p {
   // margin: auto;
+  width: 100%;
+  // background-color: white;
 }
 
 .blogHeader {
   height: 50vh;
   background-image: url(/mindnsoul-assets/blog-image-1.jpg);
   // justify-content: flex-start;
+  // margin-bottom: 50px;
 }
 
 .blogMain {
@@ -349,10 +379,23 @@ article {
 }
 
 .blogHeader h2 {
-  margin-top: 60px;
+  margin-top: 12%;
+  font-size: 5.5rem;
+  letter-spacing: 1rem;
 }
 
 // blog main styling
+
+aside {
+  width: 30%;
+  background-color: $green;
+  padding-right: 10px;
+  height: auto;
+  align-self: flex-start;
+  margin-top: 60px;
+  min-width: 150px;
+  max-width: 260px;
+}
 
 .blogEntry {
   width: 100%;
@@ -360,12 +403,20 @@ article {
   // flex-direction: column;
   // background-color: violet;
   // flex-wrap: wrap;
+  // position: relative;
+  // top: -80px;
+  margin-top: -3%;
+  line-height: 1.5;
 }
 
 .blogFlex {
+  // margin-top: 40px;
   display: flex;
-  flex-direction: space-between;
+  // flex-direction: space-between;
   // background-color: yellowgreen;
+  align-items: center;
+  max-width: 2000px;
+  margin: auto;
 }
 
 .blogPost {
@@ -373,11 +424,14 @@ article {
   // flex-direction: column;
   // align-self: center;
   width: 75%;
+  min-width: 350px;
+  max-width: calc(700px + 10%);
   // background-color: yellowgreen;
   // margin: auto;
-}
-.blogImg {
-  width: 100%;
+  border: 3px solid $green;
+  border-top: none;
+  border-left: none;
+  // padding: 15px;
 }
 
 .blogText {
@@ -385,16 +439,33 @@ article {
   // background-color: whitesmoke;
 }
 
-aside {
-  width: 30%;
-  background-color: $green;
-  padding: 10px;
-  height: auto;
-  align-self: flex-start;
+.asideImg {
+  // box-shadow: -15px 10px $green;
+  position: relative;
+  right: -10px;
+  top: -10px;
+}
+
+.asideText {
+  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 .asideText ul {
   padding-left: 15px;
+  // list-style: none;
+  color: $yellow;
+}
+.asideText ul li {
+  color: white;
+}
+.asideText ul li::before {
+  content: "\2022";
+  color: $yellow;
+  // font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 // Comments styling
@@ -404,7 +475,8 @@ aside {
   // align-items: baseline;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: coral;
+  // background-color: coral;
+  margin-bottom: 80px;
 }
 
 .commentImg {
@@ -421,6 +493,48 @@ aside {
 article h3 {
   margin-bottom: 20px;
   color: $white;
+}
+
+// Blog form styling
+fieldset {
+  border: transparent;
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  // align-items: center;
+}
+
+fieldset textarea {
+  margin: 20px 0px;
+}
+
+fieldset button {
+  @include buttonStyle;
+  border: transparent;
+}
+
+fieldset input,
+fieldset textarea {
+  background-color: transparent;
+  border: 2px solid $yellow;
+  color: white;
+  padding: 10px;
+}
+fieldset input[type="text"],
+fieldset input[type="email"] {
+  width: 45%;
+  border: none;
+  border-bottom: 2px solid $yellow;
+}
+
+.commentForm {
+  width: 60%;
+}
+
+.personalDetails {
+  display: flex;
+  justify-content: space-between;
+  // margin-bottom: 20px;
 }
 
 // RESPONSIVE STYLES

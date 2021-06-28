@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -285,6 +286,10 @@ img {
   display: block;
 }
 
+.selected {
+  color: #ffc600;
+}
+
 header {
   height: 100vh;
   background-image: url(/mindnsoul-assets/home-image-1.jpg);
@@ -358,11 +363,14 @@ h3 {
 
 h4 {
   margin: 0px;
+  color: #ffc600;
 }
 
 h5 {
   font-family: "Dokdo", cursive;
   font-size: 1.1rem;
+  margin-bottom: 0px;
+  margin-top: 0;
 }
 
 .wrapperOne {
@@ -601,23 +609,35 @@ footer {
   padding: 5px;
 }
 
-aside {
-  width: 20%;
-}
-
 article {
-  width: 57.4%;
+  width: 60%;
+  min-width: 350px;
+  max-width: calc(680px + 10%);
 }
 
 .blogWrapper {
-  border: 2px solid violet;
   max-width: 700px;
   margin-right: auto;
-  margin-left: 40px;
+  margin-left: 10%;
   width: 90%;
+  padding: 10px;
 }
 
 .blogImg {
+  width: 100%;
+  position: relative;
+  top: 0px;
+  -webkit-box-shadow: 1px 8px 0px 1px #555f02;
+          box-shadow: 1px 8px 0px 1px #555f02;
+  border-right: 15px solid #555f02;
+}
+
+.blogImg img {
+  position: relative;
+  top: -30px;
+}
+
+.blogText p {
   width: 100%;
 }
 
@@ -631,46 +651,79 @@ article {
 }
 
 .blogHeader h2 {
+  margin-top: 12%;
+  font-size: 5.5rem;
+  letter-spacing: 1rem;
+}
+
+aside {
+  width: 30%;
+  background-color: #555f02;
+  padding-right: 10px;
+  height: auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   margin-top: 60px;
+  min-width: 150px;
+  max-width: 260px;
 }
 
 .blogEntry {
   width: 100%;
+  margin-top: -3%;
+  line-height: 1.5;
 }
 
 .blogFlex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: space-between;
-          flex-direction: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 2000px;
+  margin: auto;
 }
 
 .blogPost {
   width: 75%;
-}
-
-.blogImg {
-  width: 100%;
+  min-width: 350px;
+  max-width: calc(700px + 10%);
+  border: 3px solid #555f02;
+  border-top: none;
+  border-left: none;
 }
 
 .blogText {
   width: 100%;
 }
 
-aside {
-  width: 30%;
-  background-color: #555f02;
-  padding: 10px;
-  height: auto;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+.asideImg {
+  position: relative;
+  right: -10px;
+  top: -10px;
+}
+
+.asideText {
+  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 .asideText ul {
   padding-left: 15px;
+  color: #ffc600;
+}
+
+.asideText ul li {
+  color: white;
+}
+
+.asideText ul li::before {
+  content: "•";
+  color: #ffc600;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .comment {
@@ -683,7 +736,7 @@ aside {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: coral;
+  margin-bottom: 80px;
 }
 
 .commentImg {
@@ -697,6 +750,59 @@ aside {
 article h3 {
   margin-bottom: 20px;
   color: #fafffe;
+}
+
+fieldset {
+  border: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+fieldset textarea {
+  margin: 20px 0px;
+}
+
+fieldset button {
+  background-color: #555f02;
+  color: #fafffe;
+  text-decoration: none;
+  font-family: "Dokdo", cursive;
+  padding: 10px 5px;
+  font-size: 1.15rem;
+  border: transparent;
+}
+
+fieldset input,
+fieldset textarea {
+  background-color: transparent;
+  border: 2px solid #ffc600;
+  color: white;
+  padding: 10px;
+}
+
+fieldset input[type=text],
+fieldset input[type=email] {
+  width: 45%;
+  border: none;
+  border-bottom: 2px solid #ffc600;
+}
+
+.commentForm {
+  width: 60%;
+}
+
+.personalDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (max-width: 750px) {
