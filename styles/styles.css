@@ -952,6 +952,53 @@ fieldset input[type=email] {
             align-items: center;
   }
 }
+@media (max-width: 530px) {
+  .blogWrapper {
+    margin: auto;
+  }
+
+  .blogFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: auto;
+  }
+
+  .asideImg {
+    position: static;
+    width: 40%;
+  }
+
+  .asideText {
+    width: calc(30% - 20px);
+  }
+
+  .commentForm {
+    width: 100%;
+  }
+
+  .blogMain article,
+.blogMain aside,
+.blogPost {
+    width: 100%;
+  }
+
+  .blogMain aside {
+    margin: auto;
+    padding: 5px;
+    margin-top: 10px;
+    max-width: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 @media (max-width: 500px) {
   nav ul {
     -webkit-box-orient: vertical;
@@ -995,5 +1042,22 @@ fieldset input[type=email] {
 
   .logo {
     text-align: center;
+  }
+}
+@media (max-width: 475px) {
+  .blogMain aside {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 20px;
+  }
+
+  .blogMain .asideText {
+    width: 70%;
+    margin-top: 10px;
+  }
+
+  .blogMain .asideImg {
+    width: 70%;
   }
 }
