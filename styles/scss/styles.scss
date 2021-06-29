@@ -32,7 +32,7 @@ img {
 // header styling
 header {
   height: 100vh;
-  background-image: url(/mindnsoul-assets/home-image-1.jpg);
+  background-image: url(../mindnsoul-assets/home-image-1.jpg);
   background-size: cover;
   background-position: 50% 50%;
   display: flex;
@@ -319,7 +319,7 @@ footer {
   padding: 5px;
 }
 
-// BLOG PAGE
+// BLOG PAGE STYLING ******************************************************************************
 
 // blog header styling
 
@@ -365,7 +365,7 @@ article {
 
 .blogHeader {
   height: 50vh;
-  background-image: url(/mindnsoul-assets/blog-image-1.jpg);
+  background-image: url(../mindnsoul-assets/blog-image-1.jpg);
   // justify-content: flex-start;
   // margin-bottom: 50px;
 }
@@ -387,7 +387,7 @@ article {
 
 // blog main styling
 
-aside {
+.blogMain aside {
   width: 30%;
   background-color: $green;
   padding-right: 10px;
@@ -538,7 +538,84 @@ fieldset input[type="email"] {
   // margin-bottom: 20px;
 }
 
-// RESPONSIVE STYLES
+// CONTACT PAGE STYLING****************************************************************************
+
+// Contact header styling
+.contactHeader {
+  background-image: url(../mindnsoul-assets/contact-image-1.jpg);
+  background-size: cover;
+  background-position: 10% 50%;
+  height: 75vh;
+}
+
+.contactHeader h2 {
+  @include headingFont(5.5rem);
+  margin-top: 200px;
+  margin-left: 5%;
+}
+// Contact main styling
+
+.contactMain {
+  background-color: $brown;
+}
+
+.contactFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactArea {
+  width: 70%;
+  position: relative;
+  top: -200px;
+}
+
+.contactInfo {
+  width: 100%;
+  align-self: center;
+}
+
+.contactMain aside {
+  background-color: transparent;
+}
+
+.contactMain form {
+  background-color: $grey;
+  padding: 80px 40px 40px 40px;
+  // width: 60%;
+  box-shadow: 25px 25px 0px -5px $yellow;
+  margin-right: 25px;
+}
+.contactMain form input {
+  margin-bottom: 20px;
+  // background-color: blue;
+}
+.contactMain form textarea {
+  margin-bottom: 40px;
+}
+
+.contactInfo ul {
+  list-style: none;
+  display: flex;
+  // width: 100%;
+  // background-color: red;
+  // align-self: flex-start;
+  // justify-content: space-evenly;
+  padding-left: 0px;
+}
+
+.contactInfo ul li {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.contactInfo ul li a {
+  background-color: transparent;
+  color: $yellow;
+  font-size: 1.5rem;
+}
+
+// RESPONSIVE STYLING******************************************************************************
 
 @media (max-width: 750px) {
   h3 {
@@ -582,13 +659,29 @@ fieldset input[type="email"] {
   .fourthSectionImg img {
     position: initial;
   }
+
+  // CONTACT PAGE RESPONSIVE
+  .contactFlex {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contactInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 }
 
 @media (max-width: 682px) {
   h3 {
     line-height: 0.8;
   }
-  // HOME PAGE STYLING
+  // HOME PAGE STYLING*****************************************************************************
 
   // Home page header
   // .headingHolder {
@@ -665,6 +758,25 @@ fieldset input[type="email"] {
   .thirdSection ul {
     flex-direction: column;
     align-items: center;
+  }
+
+  // Contact page styling
+  .contactArea {
+    position: static;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 580px) {
+  // Contact page styling
+  .contactArea {
+    width: 90%;
+  }
+
+  .contactArea form {
+    margin: auto;
+    box-shadow: none;
+    border-bottom: 5px solid $yellow;
   }
 }
 
@@ -768,5 +880,15 @@ fieldset input[type="email"] {
 
   .blogMain .asideImg {
     width: 70%;
+  }
+  // Contact page main styling
+  .personalDetails {
+    flex-direction: column;
+  }
+  fieldset .personalDetails input[type="text"],
+  fieldset .personalDetails input[type="email"],
+  .contactArea fieldset textarea {
+    width: 100%;
+    // text-align: center;
   }
 }

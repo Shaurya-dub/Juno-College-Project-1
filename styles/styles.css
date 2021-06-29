@@ -292,7 +292,7 @@ img {
 
 header {
   height: 100vh;
-  background-image: url(/mindnsoul-assets/home-image-1.jpg);
+  background-image: url(../mindnsoul-assets/home-image-1.jpg);
   background-size: cover;
   background-position: 50% 50%;
   display: -webkit-box;
@@ -318,6 +318,9 @@ nav {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 nav ul {
   display: -webkit-box;
@@ -642,7 +645,7 @@ article {
 
 .blogHeader {
   height: 50vh;
-  background-image: url(/mindnsoul-assets/blog-image-1.jpg);
+  background-image: url(../mindnsoul-assets/blog-image-1.jpg);
 }
 
 .blogMain {
@@ -655,7 +658,7 @@ article {
   letter-spacing: 1rem;
 }
 
-aside {
+.blogMain aside {
   width: 30%;
   background-color: #555f02;
   padding-right: 10px;
@@ -804,6 +807,87 @@ fieldset input[type=email] {
           justify-content: space-between;
 }
 
+.contactHeader {
+  background-image: url(../mindnsoul-assets/contact-image-1.jpg);
+  background-size: cover;
+  background-position: 10% 50%;
+  height: 75vh;
+}
+
+.contactHeader h2 {
+  color: #ffc600;
+  font-size: 5.5rem;
+  font-weight: 400;
+  font-family: "Dokdo", cursive;
+  margin-bottom: 0;
+  margin-top: 200px;
+  margin-left: 5%;
+}
+
+.contactMain {
+  background-color: #1e140e;
+}
+
+.contactFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contactArea {
+  width: 70%;
+  position: relative;
+  top: -200px;
+}
+
+.contactInfo {
+  width: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.contactMain aside {
+  background-color: transparent;
+}
+
+.contactMain form {
+  background-color: #262725;
+  padding: 80px 40px 40px 40px;
+  -webkit-box-shadow: 25px 25px 0px -5px #ffc600;
+          box-shadow: 25px 25px 0px -5px #ffc600;
+  margin-right: 25px;
+}
+
+.contactMain form input {
+  margin-bottom: 20px;
+}
+
+.contactMain form textarea {
+  margin-bottom: 40px;
+}
+
+.contactInfo ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0px;
+}
+
+.contactInfo ul li {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.contactInfo ul li a {
+  background-color: transparent;
+  color: #ffc600;
+  font-size: 1.5rem;
+}
+
 @media (max-width: 750px) {
   h3 {
     line-height: 0.6;
@@ -850,6 +934,37 @@ fieldset input[type=email] {
 
   .fourthSectionImg img {
     position: initial;
+  }
+
+  .contactFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .contactInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    text-align: center;
   }
 }
 @media (max-width: 682px) {
@@ -950,6 +1065,23 @@ fieldset input[type=email] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .contactArea {
+    position: static;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 580px) {
+  .contactArea {
+    width: 90%;
+  }
+
+  .contactArea form {
+    margin: auto;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-bottom: 5px solid #ffc600;
   }
 }
 @media (max-width: 530px) {
@@ -1059,5 +1191,18 @@ fieldset input[type=email] {
 
   .blogMain .asideImg {
     width: 70%;
+  }
+
+  .personalDetails {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  fieldset .personalDetails input[type=text],
+fieldset .personalDetails input[type=email],
+.contactArea fieldset textarea {
+    width: 100%;
   }
 }
