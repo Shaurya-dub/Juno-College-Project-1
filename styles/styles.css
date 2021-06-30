@@ -290,6 +290,27 @@ img {
   color: #ffc600;
 }
 
+.clickLink {
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  height: 30px;
+  padding: 8px;
+  color: #ffc600;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.clickLink:focus {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  left: 40%;
+  top: 25%;
+}
+
 header {
   height: 100vh;
   background-image: url(../mindnsoul-assets/home-image-1.jpg);
@@ -356,6 +377,15 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  color: #ffc600;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "Dokdo", cursive;
+  margin-bottom: 0;
+  margin: 0 auto;
+}
+
 h3 {
   color: #ffc600;
   font-size: 2rem;
@@ -370,10 +400,13 @@ h4 {
 }
 
 h5 {
-  font-family: "Dokdo", cursive;
+  color: #ffc600;
   font-size: 1.1rem;
-  margin-bottom: 0px;
+  font-weight: 400;
+  font-family: "Dokdo", cursive;
+  margin-bottom: 0;
   margin-top: 0;
+  color: #fafffe;
 }
 
 .wrapperOne {
@@ -411,13 +444,6 @@ h5 {
   font-family: "Lato", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0;
-}
-
-h2 {
-  color: #ffc600;
-  font-family: "Dokdo", cursive;
-  font-size: 4rem;
-  margin: 0 auto;
 }
 
 main a {
@@ -462,7 +488,8 @@ main a {
   padding: 60px 0;
 }
 
-.secondSectionImg ul {
+.secondSectionImg ul,
+.thirdSection ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,18 +519,6 @@ main a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.thirdSection ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .thirdSection ul li {
@@ -635,10 +650,6 @@ article {
   left: -12px;
 }
 
-.blogImg img {
-  position: relative;
-}
-
 .blogText p {
   width: 100%;
 }
@@ -767,6 +778,7 @@ fieldset {
 
 fieldset textarea {
   margin: 20px 0px;
+  width: 100%;
 }
 
 fieldset button {
@@ -1069,7 +1081,7 @@ fieldset input[type=email] {
 
   .contactArea {
     position: static;
-    margin-bottom: 40px;
+    margin: 40px auto;
   }
 }
 @media (max-width: 580px) {
@@ -1118,8 +1130,7 @@ fieldset input[type=email] {
 
   .blogMain aside {
     margin: auto;
-    padding: 5px;
-    margin-top: 10px;
+    padding: 15px;
     max-width: none;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1149,6 +1160,11 @@ fieldset input[type=email] {
 
   nav ul li a {
     padding: 5px 10px;
+  }
+
+  .clickLink:focus {
+    left: 35%;
+    margin: auto;
   }
 
   .firstSectionText,

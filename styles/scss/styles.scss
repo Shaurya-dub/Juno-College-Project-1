@@ -21,12 +21,22 @@ img {
 .selected {
   color: $yellow;
 }
-// ::placeholder,
-// :-ms-input-placeholder,
-// ::-ms-input-placeholder {
-//   color: $white;
-//   opacity: 1;
-// }
+
+.clickLink {
+  left: 50%;
+  position: absolute;
+  transform: translateY(-100%);
+  height: 30px;
+  padding: 8px;
+  color: $yellow;
+  transition: transform 0.3s;
+}
+
+.clickLink:focus {
+  transform: translateY(0%);
+  left: 40%;
+  top: 25%;
+}
 
 // HOME PAGE
 // header styling
@@ -42,27 +52,6 @@ header {
   flex-wrap: wrap;
 }
 
-// nav {
-//   display: flex;
-//   justify-content: space-between;
-//   //   background-color: indianred;
-
-//   ul {
-//     display: flex;
-//     flex-grow: 1;
-//     justify-content: flex-end;
-//     list-style: none;
-
-//     li a {
-//       padding: 20px;
-//       font-family: $lato;
-//       color: $white;
-//       text-decoration: none;
-//       text-transform: uppercase;
-//     }
-//   }
-// }
-
 nav {
   @include navStyle;
 }
@@ -70,6 +59,11 @@ nav {
 h1 {
   @include headingFont(2rem);
   margin: 0;
+}
+
+h2 {
+  @include headingFont(4rem);
+  margin: 0 auto;
 }
 
 h3 {
@@ -82,10 +76,9 @@ h4 {
 }
 
 h5 {
-  font-family: $dokdo;
-  font-size: 1.1rem;
-  margin-bottom: 0px;
+  @include headingFont(1.1rem);
   margin-top: 0;
+  color: $white;
 }
 
 .wrapperOne {
@@ -94,39 +87,21 @@ h5 {
 
 .headingHolder {
   display: flex;
-  //   justify-content: center;
-  // align-items: flex-start;
-  // background-color: lawngreen;
-  //   width: 60%;
-  // margin-top: 100px;
-  // flex-wrap: wrap;
-  // padding-bottom: 10%;
-  // flex-direction: column;
 }
 
 .headImg {
-  // position: relative;
-  // top: 180px;
-  // left: 0;
   width: 50%;
-  // transform: translateY(90%);
   max-width: 650px;
   align-self: flex-end;
-  // background-color: aquamarine;
 }
 
 .headImg img {
-  // position: relative;
-  // bottom: -100px;
-  // left: 0;
   transform: translateY(100px);
 }
 
 .heading {
   margin-left: 30px;
   width: 40%;
-  // align-self: center;
-  // background-color: khaki;
   margin-top: 100px;
 }
 .heading p {
@@ -134,13 +109,6 @@ h5 {
   font-family: $lato;
   font-size: 1.5rem;
   margin-bottom: 0;
-}
-
-h2 {
-  color: $yellow;
-  font-family: $dokdo;
-  font-size: 4rem;
-  margin: 0 auto;
 }
 
 // First Section Styling
@@ -159,13 +127,10 @@ main a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // margin: 80px auto 50px auto;
-  // margin-top: 40px;
 }
 
 .firstSectionText {
   width: 60%;
-  // background-color: aquamarine;
 }
 
 .firstSectionImg {
@@ -180,7 +145,8 @@ main a {
   padding: 60px 0;
 }
 
-.secondSectionImg ul {
+.secondSectionImg ul,
+.thirdSection ul {
   display: flex;
   margin: 0;
   justify-content: space-between;
@@ -203,22 +169,11 @@ main a {
 .logo {
   display: flex;
   align-items: center;
-  // background-color: lightcoral;
-}
-
-.thirdSection ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  justify-content: space-between;
 }
 
 .thirdSection ul li {
-  // display: block;
   list-style: none;
   width: calc((100% / 2) - 50px);
-  // width: 40%;
-  // background-color: lightgreen;
   margin-bottom: 10px;
 }
 
@@ -239,28 +194,23 @@ main a {
 }
 
 .wrapperTwo {
-  // display: flex;
   @include wrapperStyle(82%, 1100px);
 }
 
 .fourthSectionHold {
   display: flex;
   justify-content: space-between;
-  // background-color: lightgreen;
   align-items: center;
   height: auto;
-  // padding: 40px 0;
 }
 
 .fourthSectionHold:first-child {
   margin-bottom: 120px;
-  // background-color: red;
 }
 
 .fourthSectionText {
   margin-bottom: 30px;
   width: 40%;
-  // text-align: end;
 }
 
 .fourthSectionText p {
@@ -272,9 +222,8 @@ main a {
   position: relative;
   max-width: 600px;
   min-width: 250px;
-  // border: 2px solid red;
-  // overflow-x: hidden;
 }
+
 .fourthSectionImg:first-child img {
   position: absolute;
   box-shadow: 15px 15px $yellow;
@@ -287,7 +236,6 @@ main a {
   box-shadow: -15px 15px $yellow;
   right: -20%;
   bottom: -150px;
-  // border: 1px solid red;
 }
 
 // Last Section
@@ -325,13 +273,11 @@ footer {
 
 article {
   width: 60%;
-  // background-color: lime;
   min-width: 350px;
   max-width: calc(680px + 10%);
 }
 
 .blogWrapper {
-  // border: 2px solid violet;
   max-width: 700px;
   margin-right: auto;
   margin-left: 10%;
@@ -345,38 +291,19 @@ article {
   top: -30px;
   box-shadow: 20px 15px 0px -5px $green;
   left: -12px;
-  // max-width: 585px;
-  // margin-left: 2.3%;
-  // border-right: 15px solid $green;
-  // border-bottom: 15px solid $green;
-}
-
-.blogImg img {
-  position: relative;
-  // top: -30px;
-  // bottom: 0px;
 }
 
 .blogText p {
-  // margin: auto;
   width: 100%;
-  // background-color: white;
 }
 
 .blogHeader {
   height: 50vh;
   background-image: url(../mindnsoul-assets/blog-image-1.jpg);
-  // justify-content: flex-start;
-  // margin-bottom: 50px;
 }
 
 .blogMain {
   background-color: $brown;
-  // display: flex;
-}
-
-.blogHeader nav {
-  // align-self: flex-start;
 }
 
 .blogHeader h2 {
@@ -400,48 +327,31 @@ article {
 
 .blogEntry {
   width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // background-color: violet;
-  // flex-wrap: wrap;
-  // position: relative;
-  // top: -80px;
   margin-top: -3%;
   line-height: 1.5;
 }
 
 .blogFlex {
-  // margin-top: 40px;
   display: flex;
-  // flex-direction: space-between;
-  // background-color: yellowgreen;
   align-items: center;
   max-width: 2000px;
   margin: auto;
 }
 
 .blogPost {
-  // display: flex;
-  // flex-direction: column;
-  // align-self: center;
   width: 75%;
   min-width: 350px;
   max-width: calc(700px + 10%);
-  // background-color: yellowgreen;
-  // margin: auto;
   border: 3px solid $green;
   border-top: none;
   border-left: none;
-  // padding: 15px;
 }
 
 .blogText {
   width: 100%;
-  // background-color: whitesmoke;
 }
 
 .asideImg {
-  // box-shadow: -15px 10px $green;
   position: relative;
   right: -10px;
   top: -10px;
@@ -454,16 +364,15 @@ article {
 
 .asideText ul {
   padding-left: 15px;
-  // list-style: none;
   color: $yellow;
 }
+
 .asideText ul li {
   color: white;
 }
 .asideText ul li::before {
   content: "\2022";
   color: $yellow;
-  // font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
@@ -473,22 +382,17 @@ article {
 
 .comment {
   display: flex;
-  // align-items: baseline;
   align-items: flex-start;
   justify-content: space-between;
-  // background-color: coral;
   margin-bottom: 80px;
 }
 
 .commentImg {
   width: 15%;
-  // align-self: flex-start;
 }
 
 .commentText {
   width: 80%;
-  // flex-grow: 1;
-  // margin-top:0px;
 }
 
 article h3 {
@@ -501,12 +405,11 @@ fieldset {
   border: transparent;
   display: flex;
   flex-direction: column;
-  // flex-wrap: wrap;
-  // align-items: center;
 }
 
 fieldset textarea {
   margin: 20px 0px;
+  width: 100%;
 }
 
 fieldset button {
@@ -535,7 +438,6 @@ fieldset input[type="email"] {
 .personalDetails {
   display: flex;
   justify-content: space-between;
-  // margin-bottom: 20px;
 }
 
 // CONTACT PAGE STYLING****************************************************************************
@@ -582,13 +484,11 @@ fieldset input[type="email"] {
 .contactMain form {
   background-color: $grey;
   padding: 80px 40px 40px 40px;
-  // width: 60%;
   box-shadow: 25px 25px 0px -5px $yellow;
   margin-right: 25px;
 }
 .contactMain form input {
   margin-bottom: 20px;
-  // background-color: blue;
 }
 .contactMain form textarea {
   margin-bottom: 40px;
@@ -597,10 +497,6 @@ fieldset input[type="email"] {
 .contactInfo ul {
   list-style: none;
   display: flex;
-  // width: 100%;
-  // background-color: red;
-  // align-self: flex-start;
-  // justify-content: space-evenly;
   padding-left: 0px;
 }
 
@@ -683,11 +579,6 @@ fieldset input[type="email"] {
   }
   // HOME PAGE STYLING*****************************************************************************
 
-  // Home page header
-  // .headingHolder {
-  //   margin-bottom: auto;
-  //   align-self: flex-start;
-  // }
   header {
     background-position: right;
   }
@@ -719,7 +610,6 @@ fieldset input[type="email"] {
     flex-direction: column-reverse;
     text-align: center;
     padding: 20px 0px;
-    // margin-bottom: auto;
   }
 
   .fourthSectionText {
@@ -763,7 +653,7 @@ fieldset input[type="email"] {
   // Contact page styling
   .contactArea {
     position: static;
-    margin-bottom: 40px;
+    margin: 40px auto;
   }
 }
 
@@ -789,7 +679,6 @@ fieldset input[type="email"] {
 
   .blogFlex {
     flex-direction: column;
-    // width: 70%;
     margin: auto;
   }
 
@@ -800,7 +689,6 @@ fieldset input[type="email"] {
 
   .asideText {
     width: calc(30% - 20px);
-    // margin-right: 8px;
   }
 
   .commentForm {
@@ -815,8 +703,7 @@ fieldset input[type="email"] {
 
   .blogMain aside {
     margin: auto;
-    padding: 5px;
-    margin-top: 10px;
+    padding: 15px;
     max-width: none;
     display: flex;
     flex-wrap: wrap;
@@ -839,11 +726,14 @@ fieldset input[type="email"] {
     padding: 5px 10px;
   }
 
+  .clickLink:focus {
+    left: 35%;
+    margin: auto;
+  }
   .firstSectionText,
   .fourthSectionText,
   .lastSectionText {
     width: 100%;
-    // padding-left: 40px;
     text-align: center;
   }
 
@@ -889,6 +779,5 @@ fieldset input[type="email"] {
   fieldset .personalDetails input[type="email"],
   .contactArea fieldset textarea {
     width: 100%;
-    // text-align: center;
   }
 }
