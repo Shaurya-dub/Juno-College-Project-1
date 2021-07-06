@@ -138,25 +138,99 @@ main a {
   box-shadow: -15px 15px $green;
 }
 
-// Second Section Styling
+// Carousel Section Styling
 
 .secondSection {
   background-color: $grey;
   padding: 60px 0;
 }
-
-.secondSectionImg ul,
-.thirdSection ul {
+.secondSectionCarousel {
+  overflow: hidden;
+  width: 90%;
+}
+.carousel {
+  transform-style: preserve-3d;
   display: flex;
-  margin: 0;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
-.secondSectionImg ul li {
-  list-style: none;
-  width: calc((100% / 3) - 20px);
+.carouselImage {
+  position: absolute;
+  width: calc(30% - 10px);
+  // max-width: 400px;
+  min-width: 200px;
+  top: 0px;
+  margin: auto;
+  // padding: 40px;
+  z-index: 5;
+  opacity: 0;
+  transition: all 0.5s ease-in;
 }
+
+.carouselImage.first,
+.carouselImage.active {
+  position: relative;
+  z-index: 15;
+  opacity: 1;
+}
+
+.carouselImage.prev,
+.carouselImage.next {
+  z-index: 10;
+}
+.carouselImage.prev {
+  @include carouselScroll(translateX(-100%));
+}
+.carouselImage.next {
+  @include carouselScroll(translateX(100%));
+}
+.buttonNext,
+.buttonPrev {
+  position: absolute;
+  top: 50%;
+  // left: 95%;
+  width: 30px;
+  height: 30px;
+  background-color: $green;
+  @include carouselScroll(translateY(-50%));
+  border-radius: 20px;
+  z-index: 20;
+}
+.buttonPrev {
+  left: 0;
+}
+.buttonNext {
+  right: 0%;
+}
+.buttonPrev::after,
+.buttonNext::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  border-right: 2px solid $yellow;
+  border-bottom: 2px solid $yellow;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.buttonPrev::after {
+  left: 55%;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+// .secondSectionImg ul,
+// .thirdSection ul {
+//   display: flex;
+//   margin: 0;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// }
+
+// .secondSectionImg ul li {
+//   list-style: none;
+//   width: calc((100% / 3) - 20px);
+// }
 
 // Third Section Styling
 
