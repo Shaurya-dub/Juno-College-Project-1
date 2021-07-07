@@ -138,24 +138,25 @@ main a {
   box-shadow: -15px 15px $green;
 }
 
-// Carousel Section Styling
+// Carousel Section Styling --> created using the help of a how-to article by Marcus Michaels (https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9)
 
 .secondSection {
   background-color: $grey;
   padding: 60px 0;
 }
 .secondSectionCarousel {
-  overflow: hidden;
+  // overflow: hidden;
   width: 90%;
 }
 .carousel {
   transform-style: preserve-3d;
   display: flex;
+  // background-color: aqua;
 }
 
 .carouselImage {
   position: absolute;
-  width: calc(30% - 10px);
+  width: calc(30% - 5px);
   // max-width: 400px;
   min-width: 200px;
   top: 0px;
@@ -188,15 +189,15 @@ main a {
   position: absolute;
   top: 50%;
   // left: 95%;
-  width: 30px;
-  height: 30px;
-  background-color: $green;
+  width: 5rem;
+  height: 5rem;
+  background-color: #565f028c;
   @include carouselScroll(translateY(-50%));
   border-radius: 20px;
   z-index: 20;
 }
 .buttonPrev {
-  left: 0;
+  left: 0%;
 }
 .buttonNext {
   right: 0%;
@@ -205,8 +206,8 @@ main a {
 .buttonNext::after {
   content: " ";
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 50%;
   border-right: 2px solid $yellow;

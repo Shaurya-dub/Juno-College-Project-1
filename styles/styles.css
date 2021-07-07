@@ -489,7 +489,6 @@ main a {
 }
 
 .secondSectionCarousel {
-  overflow: hidden;
   width: 90%;
 }
 
@@ -503,7 +502,7 @@ main a {
 
 .carouselImage {
   position: absolute;
-  width: calc(30% - 10px);
+  width: calc(30% - 5px);
   min-width: 200px;
   top: 0px;
   margin: auto;
@@ -539,9 +538,9 @@ main a {
 .buttonPrev {
   position: absolute;
   top: 50%;
-  width: 30px;
-  height: 30px;
-  background-color: #555f02;
+  width: 5rem;
+  height: 5rem;
+  background-color: #565f028c;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   border-radius: 20px;
@@ -549,7 +548,7 @@ main a {
 }
 
 .buttonPrev {
-  left: 0;
+  left: 0%;
 }
 
 .buttonNext {
@@ -560,8 +559,8 @@ main a {
 .buttonNext::after {
   content: " ";
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 50%;
   border-right: 2px solid #ffc600;
