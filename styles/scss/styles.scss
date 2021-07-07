@@ -81,6 +81,25 @@ h5 {
   color: $white;
 }
 
+.hamburger {
+  display: none;
+}
+
+.mobileMenu {
+  max-height: 0px;
+  // opacity: 0;
+  flex-direction: column;
+  // text-align: center;
+  transition: max-height 0.5s ease-in;
+}
+
+.mobileMenu li {
+  // display: none;
+  visibility: hidden;
+  // opacity: 0;
+  transition: all 0.2s;
+}
+
 .wrapperOne {
   @include wrapperStyle(85%, 1200px);
 }
@@ -586,6 +605,39 @@ fieldset input[type="email"] {
     flex-direction: column;
     align-items: center;
     margin-bottom: auto auto;
+  }
+  .desktopMenu {
+    display: none;
+  }
+
+  .hamburger {
+    // background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fa-bars {
+    font-size: 2rem;
+  }
+
+  .mobileMenu.open {
+    display: block;
+    max-height: 400px;
+    width: 100%;
+    align-items: center;
+    padding-left: 0;
+    padding: 10px;
+    opacity: 1;
+    background-color: $brown;
+    text-align: center;
+    transition: max-height 0.5s ease-in;
+  }
+
+  .mobileMenu.open li {
+    opacity: 1;
+    visibility: visible;
+    // display: block;
   }
 
   // Home page main
