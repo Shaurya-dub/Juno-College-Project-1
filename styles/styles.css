@@ -681,7 +681,6 @@ article {
 }
 
 .blogHeader h2 {
-  margin-top: 12%;
   font-size: 5.5rem;
   letter-spacing: 1rem;
 }
@@ -1020,6 +1019,10 @@ fieldset input[type=email] {
     display: none;
   }
 
+  .heading {
+    margin-top: 0px;
+  }
+
   .menuBtn {
     position: relative;
     display: -webkit-box;
@@ -1053,8 +1056,6 @@ fieldset input[type=email] {
     height: 6px;
     background: #ffc600;
     border-radius: 5px;
-    -webkit-box-shadow: 0 2px 5px #1e140e;
-            box-shadow: 0 2px 5px #1e140e;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
@@ -1108,10 +1109,17 @@ fieldset input[type=email] {
             align-items: center;
     padding-left: 0;
     padding: 10px;
-    background-color: #1e140e;
     text-align: center;
     visibility: visible;
     top: 0px;
+  }
+
+  .mobileMenu li {
+    margin: 7px;
+  }
+
+  .mobileMenu li a {
+    padding: 4px;
   }
 
   .firstSectionHolder {
@@ -1194,9 +1202,34 @@ fieldset input[type=email] {
             align-items: center;
   }
 
+  .contactHeader .wrapperOne {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+  }
+
+  .contactHeader h2 {
+    margin-top: 0px;
+  }
+
   .contactArea {
     position: static;
     margin: 40px auto;
+  }
+
+  .blogHeader h2 {
+    margin: 0;
+    text-align: end;
+    margin-left: auto;
+    margin-bottom: -50px;
   }
 }
 @media (max-width: 580px) {

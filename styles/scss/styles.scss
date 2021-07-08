@@ -323,7 +323,7 @@ article {
 }
 
 .blogHeader h2 {
-  margin-top: 12%;
+  // margin-top: 12%;
   font-size: 5.5rem;
   letter-spacing: 1rem;
 }
@@ -606,6 +606,9 @@ fieldset input[type="email"] {
   .desktopMenu {
     display: none;
   }
+  .heading {
+    margin-top: 0px;
+  }
 
   // Hamburger Menu Styling , inspired by video from codeSTACKr (https://www.youtube.com/watch?v=dIyVTjJAkLw)
 
@@ -636,7 +639,6 @@ fieldset input[type="email"] {
     height: 6px;
     background: $yellow;
     border-radius: 5px;
-    box-shadow: 0 2px 5px $brown;
     transition: all 0.3s ease;
   }
 
@@ -678,11 +680,17 @@ fieldset input[type="email"] {
     align-items: center;
     padding-left: 0;
     padding: 10px;
-    // opacity: 1;
-    background-color: $brown;
     text-align: center;
     visibility: visible;
     top: 0px;
+  }
+
+  .mobileMenu li {
+    margin: 7px;
+  }
+
+  .mobileMenu li a {
+    padding: 4px;
   }
 
   // Home page main
@@ -748,9 +756,30 @@ fieldset input[type="email"] {
   }
 
   // Contact page styling
+  .contactHeader .wrapperOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background-color: red;
+    height: 100%;
+  }
+
+  .contactHeader h2 {
+    margin-top: 0px;
+  }
   .contactArea {
     position: static;
     margin: 40px auto;
+  }
+
+  // Blog page header styling
+
+  .blogHeader h2 {
+    margin: 0;
+    text-align: end;
+    // width: 20%;
+    margin-left: auto;
+    margin-bottom: -50px;
   }
 }
 
