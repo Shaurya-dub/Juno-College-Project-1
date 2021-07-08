@@ -54,6 +54,7 @@ header {
 
 nav {
   @include navStyle;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -81,23 +82,19 @@ h5 {
   color: $white;
 }
 
-.hamburger {
-  display: none;
+.mobileMenuHolder {
+  overflow-y: hidden;
 }
 
 .mobileMenu {
-  max-height: 0px;
+  visibility: hidden;
+  // max-height: 0px;
+  position: relative;
+  top: -300px;
   // opacity: 0;
   flex-direction: column;
   // text-align: center;
-  transition: max-height 0.5s ease-in;
-}
-
-.mobileMenu li {
-  // display: none;
-  visibility: hidden;
-  // opacity: 0;
-  transition: all 0.2s;
+  transition: all 0.4s ease;
 }
 
 .wrapperOne {
@@ -610,34 +607,82 @@ fieldset input[type="email"] {
     display: none;
   }
 
-  .hamburger {
-    // background-color: aquamarine;
+  // Hamburger Menu Styling , inspired by video from codeSTACKr (https://www.youtube.com/watch?v=dIyVTjJAkLw)
+
+  .menuBtn {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
   }
 
-  .fa-bars {
-    font-size: 2rem;
+  .menuBtnBurger {
+    width: 50px;
+    height: 6px;
+    background: $yellow;
+    border-radius: 5px;
+
+    transition: all 0.2s ease-in;
+  }
+
+  .menuBtnBurger::before,
+  .menuBtnBurger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: $yellow;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px $brown;
+    transition: all 0.3s ease;
+  }
+
+  .menuBtnBurger::before {
+    transform: translateY(-16px);
+  }
+  .menuBtnBurger::after {
+    transform: translateY(16px);
+  }
+
+  .menuBtn:hover,
+  .menuBtn:focus {
+    outline: 0;
+  }
+
+  .menuBtn:hover .menuBtnBurger::before,
+  .menuBtn:hover .menuBtnBurger,
+  .menuBtn:hover .menuBtnBurger::after,
+  .menuBtn:focus .menuBtnBurger::before,
+  .menuBtn:focus .menuBtnBurger,
+  .menuBtn:focus .menuBtnBurger::after {
+    box-shadow: 2px 0px 5px rgb(224, 192, 8);
+  }
+
+  .menuBtn.move .menuBtnBurger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menuBtn.move .menuBtnBurger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menuBtn.move .menuBtnBurger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
   }
 
   .mobileMenu.open {
-    display: block;
-    max-height: 400px;
-    width: 100%;
     align-items: center;
     padding-left: 0;
     padding: 10px;
-    opacity: 1;
+    // opacity: 1;
     background-color: $brown;
     text-align: center;
-    transition: max-height 0.5s ease-in;
-  }
-
-  .mobileMenu.open li {
-    opacity: 1;
     visibility: visible;
-    // display: block;
+    top: 0px;
   }
 
   // Home page main

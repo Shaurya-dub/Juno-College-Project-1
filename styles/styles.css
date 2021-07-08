@@ -342,6 +342,7 @@ nav {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  overflow-y: hidden;
 }
 nav ul {
   display: -webkit-box;
@@ -409,24 +410,20 @@ h5 {
   color: #fafffe;
 }
 
-.hamburger {
-  display: none;
+.mobileMenuHolder {
+  overflow-y: hidden;
 }
 
 .mobileMenu {
-  max-height: 0px;
+  visibility: hidden;
+  position: relative;
+  top: -300px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: max-height 0.5s ease-in;
-  transition: max-height 0.5s ease-in;
-}
-
-.mobileMenu li {
-  visibility: hidden;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .wrapperOne {
@@ -1023,42 +1020,98 @@ fieldset input[type=email] {
     display: none;
   }
 
-  .hamburger {
+  .menuBtn {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
   }
 
-  .fa-bars {
-    font-size: 2rem;
+  .menuBtnBurger {
+    width: 50px;
+    height: 6px;
+    background: #ffc600;
+    border-radius: 5px;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+
+  .menuBtnBurger::before,
+.menuBtnBurger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #ffc600;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 5px #1e140e;
+            box-shadow: 0 2px 5px #1e140e;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .menuBtnBurger::before {
+    -webkit-transform: translateY(-16px);
+            transform: translateY(-16px);
+  }
+
+  .menuBtnBurger::after {
+    -webkit-transform: translateY(16px);
+            transform: translateY(16px);
+  }
+
+  .menuBtn:hover,
+.menuBtn:focus {
+    outline: 0;
+  }
+
+  .menuBtn:hover .menuBtnBurger::before,
+.menuBtn:hover .menuBtnBurger,
+.menuBtn:hover .menuBtnBurger::after,
+.menuBtn:focus .menuBtnBurger::before,
+.menuBtn:focus .menuBtnBurger,
+.menuBtn:focus .menuBtnBurger::after {
+    -webkit-box-shadow: 2px 0px 5px #e0c008;
+            box-shadow: 2px 0px 5px #e0c008;
+  }
+
+  .menuBtn.move .menuBtnBurger {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .menuBtn.move .menuBtnBurger::before {
+    -webkit-transform: rotate(45deg) translate(35px, -35px);
+            transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  .menuBtn.move .menuBtnBurger::after {
+    -webkit-transform: rotate(-45deg) translate(35px, 35px);
+            transform: rotate(-45deg) translate(35px, 35px);
   }
 
   .mobileMenu.open {
-    display: block;
-    max-height: 400px;
-    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     padding-left: 0;
     padding: 10px;
-    opacity: 1;
     background-color: #1e140e;
     text-align: center;
-    -webkit-transition: max-height 0.5s ease-in;
-    transition: max-height 0.5s ease-in;
-  }
-
-  .mobileMenu.open li {
-    opacity: 1;
     visibility: visible;
+    top: 0px;
   }
 
   .firstSectionHolder {
