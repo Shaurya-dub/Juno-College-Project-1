@@ -54,6 +54,7 @@ header {
 
 nav {
   @include navStyle;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -79,6 +80,21 @@ h5 {
   @include headingFont(1.1rem);
   margin-top: 0;
   color: $white;
+}
+
+.mobileMenuHolder {
+  overflow-y: hidden;
+}
+
+.mobileMenu {
+  visibility: hidden;
+  // max-height: 0px;
+  position: relative;
+  top: -300px;
+  // opacity: 0;
+  flex-direction: column;
+  // text-align: center;
+  transition: all 0.4s ease;
 }
 
 .wrapperOne {
@@ -307,7 +323,7 @@ article {
 }
 
 .blogHeader h2 {
-  margin-top: 12%;
+  // margin-top: 12%;
   font-size: 5.5rem;
   letter-spacing: 1rem;
 }
@@ -469,7 +485,7 @@ fieldset input[type="email"] {
 .contactArea {
   width: 70%;
   position: relative;
-  top: -200px;
+  top: -120px;
 }
 
 .contactInfo {
@@ -587,6 +603,95 @@ fieldset input[type="email"] {
     align-items: center;
     margin-bottom: auto auto;
   }
+  .desktopMenu {
+    display: none;
+  }
+  .heading {
+    margin-top: 0px;
+  }
+
+  // Hamburger Menu Styling , inspired by video from codeSTACKr (https://www.youtube.com/watch?v=dIyVTjJAkLw)
+
+  .menuBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+  }
+
+  .menuBtnBurger {
+    width: 50px;
+    height: 6px;
+    background: $yellow;
+    border-radius: 5px;
+
+    transition: all 0.2s ease-in;
+  }
+
+  .menuBtnBurger::before,
+  .menuBtnBurger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: $yellow;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .menuBtnBurger::before {
+    transform: translateY(-16px);
+  }
+  .menuBtnBurger::after {
+    transform: translateY(16px);
+  }
+
+  .menuBtn:hover,
+  .menuBtn:focus {
+    outline: 0;
+  }
+
+  .menuBtn:hover .menuBtnBurger::before,
+  .menuBtn:hover .menuBtnBurger,
+  .menuBtn:hover .menuBtnBurger::after,
+  .menuBtn:focus .menuBtnBurger::before,
+  .menuBtn:focus .menuBtnBurger,
+  .menuBtn:focus .menuBtnBurger::after {
+    box-shadow: 2px 0px 5px rgb(224, 192, 8);
+  }
+
+  .menuBtn.move .menuBtnBurger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menuBtn.move .menuBtnBurger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menuBtn.move .menuBtnBurger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+  .mobileMenu.open {
+    align-items: center;
+    padding-left: 0;
+    padding: 10px;
+    text-align: center;
+    visibility: visible;
+    top: 0px;
+  }
+
+  .mobileMenu li {
+    margin: 7px;
+  }
+
+  .mobileMenu li a {
+    padding: 4px;
+  }
 
   // Home page main
   .firstSectionHolder {
@@ -651,9 +756,30 @@ fieldset input[type="email"] {
   }
 
   // Contact page styling
+  .contactHeader .wrapperOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background-color: red;
+    height: 100%;
+  }
+
+  .contactHeader h2 {
+    margin-top: 0px;
+  }
   .contactArea {
     position: static;
     margin: 40px auto;
+  }
+
+  // Blog page header styling
+
+  .blogHeader h2 {
+    margin: 0;
+    text-align: end;
+    // width: 20%;
+    margin-left: auto;
+    margin-bottom: -50px;
   }
 }
 
